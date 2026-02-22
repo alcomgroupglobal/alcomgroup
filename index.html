@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALCOM GROUP GLOBAL | Global Logistics Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-navy': '#041021',
+                        'brand-blue': '#0a2540',
+                        'brand-accent': '#c5a059',
+                        'action-blue': '#1a56db',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient { background: linear-gradient(90deg, rgba(4,16,33,0.95) 0%, rgba(4,16,33,0.6) 50%, rgba(4,16,33,0) 100%); }
+        .glass-nav { backdrop-filter: blur(10px); background: rgba(4, 16, 33, 0.8); }
+        [x-cloak] { display: none !important; }
+        .map-container iframe { filter: grayscale(1) invert(0.9) contrast(1.2); }
+    </style>
+</head>
+<body class="bg-white text-brand-navy antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Premium Navigation -->
+    <nav x-data="{ mobileMenuOpen: false, scrolled: false }" 
+         @scroll.window="scrolled = (window.pageYOffset > 50) ? true : false"
+         :class="scrolled ? 'glass-nav py-3' : 'bg-transparent py-6'"
+         class="fixed w-full top-0 z-50 transition-all duration-500 text-white border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center">
+                <!-- Brand Identity -->
+                <div class="flex-shrink-0 z-50 flex flex-col">
+                    <a href="#" class="font-heading font-extrabold text-2xl tracking-[0.15em] flex items-center gap-2 leading-none">
+                        ALCOM<span class="font-light text-brand-accent">GROUP</span>
+                    </a>
+                    <span class="text-brand-accent font-heading font-bold tracking-[0.3em] uppercase text-[7px] mt-1 ml-0.5">International Trade Leadership</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#home" class="text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-accent transition-colors">Global</a>
+                    <a href="#solutions" class="text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-accent transition-colors">Solutions</a>
+                    <a href="#about" class="text-xs uppercase tracking-[0.2em] font-medium hover:text-brand-accent transition-colors">Heritage</a>
+                    <a href="#contact" class="border border-brand-accent px-8 py-2 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-brand-accent hover:text-white transition-all">Direct Inquiry</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="focus:outline-none">
+                        <i data-lucide="align-right" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Global Impact Hero -->
+    <section id="home" class="relative h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Container ship at sea" 
+                 class="w-full h-full object-cover scale-105 animate-[subtle-zoom_20s_infinite_alternate]" />
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-4xl">
+                <!-- Hero Heading Section -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
+                    Borderless <br/> <span class="text-brand-accent italic font-light tracking-normal">Infrastructure.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 font-light leading-relaxed max-w-xl border-l border-brand-accent/30 pl-8">
+                    We facilitate the movement of strategic assets for high-volume importers and exporters. Precision logistics management with reach across all five continents.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#solutions" class="bg-brand-accent text-brand-navy px-12 py-5 font-heading font-bold text-[11px] uppercase tracking-[0.3em] transition-all hover:bg-white hover:-translate-y-1 shadow-2xl">Global Operations</a>
+                    <a href="#contact" class="border border-white/30 text-white px-12 py-5 font-heading font-bold text-[11px] uppercase tracking-[0.3em] backdrop-blur-sm transition-all hover:bg-white/10">Strategic Consulting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions for Importers/Exporters -->
+    <section id="solutions" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand-accent font-heading font-bold tracking-[0.4em] uppercase text-[10px] mb-4">Capabilities Portfolio</h2>
+                    <h3 class="text-4xl md:text-5xl font-heading font-extrabold text-brand-navy leading-tight">International Traffic Solutions</h3>
+                </div>
+                <p class="text-gray-500 text-sm font-light max-w-xs border-r border-gray-200 pr-6 text-right italic">
+                    Optimizing global commodity flows since 2011.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-gray-100 border border-gray-100">
+                <div class="group relative bg-white p-12 overflow-hidden transition-all duration-500 hover:bg-brand-navy">
+                    <div class="relative z-10 transition-colors duration-500 group-hover:text-white">
+                        <i data-lucide="container" class="w-12 h-12 text-brand-accent mb-8"></i>
+                        <h4 class="text-xl font-heading font-bold mb-4 uppercase tracking-wider">Ocean Freight</h4>
+                        <p class="text-sm font-light leading-relaxed mb-8 text-gray-500 group-hover:text-gray-300">End-to-end FCL coordination and oversized cargo projects across all major transoceanic trade lanes.</p>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">Standard & Special Cargo</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-white p-12 overflow-hidden transition-all duration-500 hover:bg-brand-navy">
+                    <div class="relative z-10 transition-colors duration-500 group-hover:text-white">
+                        <i data-lucide="anchor" class="w-12 h-12 text-brand-accent mb-8"></i>
+                        <h4 class="text-xl font-heading font-bold mb-4 uppercase tracking-wider">Customs Compliance</h4>
+                        <p class="text-sm font-light leading-relaxed mb-8 text-gray-500 group-hover:text-gray-300">Specialists in international regulatory frameworks and clearance processes to expedite critical import flows.</p>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">Trade Compliance</span>
+                    </div>
+                </div>
+
+                <div class="group relative bg-white p-12 overflow-hidden transition-all duration-500 hover:bg-brand-navy">
+                    <div class="relative z-10 transition-colors duration-500 group-hover:text-white">
+                        <i data-lucide="bar-chart-3" class="w-12 h-12 text-brand-accent mb-8"></i>
+                        <h4 class="text-xl font-heading font-bold mb-4 uppercase tracking-wider">Supply Strategy</h4>
+                        <p class="text-sm font-light leading-relaxed mb-8 text-gray-500 group-hover:text-gray-300">Technical advisory for exporters seeking to penetrate emerging markets with operational and fiscal efficiency.</p>
+                        <span class="text-[10px] font-bold tracking-[0.2em] text-brand-accent uppercase">Strategic Sourcing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Contact & Location Section -->
+    <section id="contact" class="py-32 bg-brand-navy overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                
+                <div class="relative z-10">
+                    <h2 class="text-brand-accent font-heading font-bold tracking-[0.4em] uppercase text-[10px] mb-6">Global Headquarters</h2>
+                    <h3 class="text-4xl font-heading font-extrabold text-white mb-12 tracking-tight">Connect with Our <br/> <span class="italic font-light text-brand-accent">Logistics Desk.</span></h3>
+                    
+                    <div class="space-y-10">
+                        <div class="flex items-start gap-6 group">
+                            <div class="p-3 border border-white/10 group-hover:border-brand-accent transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5 text-brand-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Direct Email</p>
+                                <a href="mailto:sales@alcomgroup.mx" class="text-lg text-white font-light hover:text-brand-accent transition-colors">sales@alcomgroup.mx</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6 group">
+                            <div class="p-3 border border-white/10 group-hover:border-brand-accent transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Contact Line</p>
+                                <a href="tel:+523314460036" class="text-lg text-white font-light hover:text-brand-accent transition-colors">+52 33 1446 0036</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6 group">
+                            <div class="p-3 border border-white/10 group-hover:border-brand-accent transition-colors">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-accent"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Official Address</p>
+                                <p class="text-lg text-white font-light leading-relaxed">
+                                    Av Chapultepec NTE 15 Ladron de Guevara <br/>
+                                    Lafayette 44600 Guadalajara Jalisco, MX.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-8 pt-6">
+                            <a href="https://facebook.com/AlcomGroupGlobalLogistics" target="_blank" class="text-white/40 hover:text-brand-accent transition-all flex items-center gap-2 text-[10px] uppercase tracking-[0.2em]">
+                                <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                            </a>
+                            <a href="https://instagram.com/alcomgroupglobal" target="_blank" class="text-white/40 hover:text-brand-accent transition-all flex items-center gap-2 text-[10px] uppercase tracking-[0.2em]">
+                                <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="map-container relative h-[500px] w-full border border-white/5 shadow-2xl overflow-hidden grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-1000">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.208153323062!2d-103.3688!3d20.6784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae0290940001%3A0x6a0f0d0d0d0d0d0d!2sAv%20Chapultepec%20Nte%2015%2C%20Ladr%C3%B3n%20de%20Guevara%2C%20Lafayette%2C%2044600%20Guadalajara%2C%20Jal.!5e0!3m2!1sen!2smx!4v1700000000000!5m2!1sen!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-3xl -z-10"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Footer -->
+    <footer class="bg-brand-navy text-gray-400 py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-1">
+                    <div class="flex flex-col mb-8">
+                        <a href="#" class="font-heading font-bold text-xl tracking-widest text-white block leading-none">
+                            ALCOM<span class="text-brand-accent">GROUP</span>
+                        </a>
+                        <span class="text-brand-accent font-heading font-bold tracking-[0.2em] uppercase text-[7px] mt-1">International Trade Leadership</span>
+                    </div>
+                    <p class="text-xs leading-loose tracking-wider uppercase font-light">
+                        High-tier international logistics. <br/> Technical efficiency for global <br/> import and export.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-heading font-bold text-[10px] uppercase tracking-[0.3em] mb-8">Operations</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Sea Freight</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Air Logistics</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Supply Chain</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-heading font-bold text-[10px] uppercase tracking-[0.3em] mb-8">Advisory</h5>
+                    <ul class="space-y-4 text-[10px] tracking-widest uppercase">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Tax & Customs</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Trade Advisory</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Risk Management</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-heading font-bold text-[10px] uppercase tracking-[0.3em] mb-8">Direct Contact</h5>
+                    <p class="text-[10px] leading-loose tracking-widest uppercase">
+                        Sales: sales@alcomgroup.mx <br/>
+                        HQ: +52 33 1446 0036 <br/>
+                        Guadalajara, Jalisco, MX.
+                    </p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] uppercase tracking-[0.2em]">
+                <p>&copy; 2026 ALCOM GROUP GLOBAL. Global Logistics Network.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-white transition-colors">Compliance</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes subtle-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
